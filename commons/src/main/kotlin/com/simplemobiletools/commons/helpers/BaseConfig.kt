@@ -285,7 +285,7 @@ open class BaseConfig(val context: Context) {
     fun hasCustomSorting(path: String) = prefs.contains(SORT_FOLDER_PREFIX + path.toLowerCase())
 
     var hadThankYouInstalled: Boolean
-        get() = prefs.getBoolean(HAD_THANK_YOU_INSTALLED, false)
+        get() = prefs.getBoolean(HAD_THANK_YOU_INSTALLED, true)
         set(hadThankYouInstalled) = prefs.edit().putBoolean(HAD_THANK_YOU_INSTALLED, hadThankYouInstalled).apply()
 
     var skipDeleteConfirmation: Boolean

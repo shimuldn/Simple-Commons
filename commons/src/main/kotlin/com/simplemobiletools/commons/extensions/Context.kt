@@ -423,17 +423,18 @@ fun Context.getUriMimeType(path: String, newUri: Uri): String {
     return mimeType
 }
 
-fun Context.isThankYouInstalled() = isPackageInstalled("com.simplemobiletools.thankyou")
+fun Context.isThankYouInstalled() = true
 
 fun Context.isOrWasThankYouInstalled(): Boolean {
-    return when {
-        baseConfig.hadThankYouInstalled -> true
-        isThankYouInstalled() -> {
-            baseConfig.hadThankYouInstalled = true
-            true
-        }
-        else -> false
-    }
+//    return when {
+//        baseConfig.hadThankYouInstalled -> true
+//        isThankYouInstalled() -> {
+//            baseConfig.hadThankYouInstalled = true
+//            true
+//        }
+//        else -> false
+//    }
+    return true
 }
 
 fun Context.isAProApp() = packageName.startsWith("com.simplemobiletools.") && packageName.removeSuffix(".debug").endsWith(".pro")
@@ -449,12 +450,13 @@ fun Context.getCustomizeColorsString(): String {
 }
 
 fun Context.isPackageInstalled(pkgName: String): Boolean {
-    return try {
-        packageManager.getPackageInfo(pkgName, 0)
-        true
-    } catch (e: Exception) {
-        false
-    }
+//    return try {
+//        packageManager.getPackageInfo(pkgName, 0)
+//        true
+//    } catch (e: Exception) {
+//        false
+//    }
+    return true
 }
 
 // format day bits to strings like "Mon, Tue, Wed"
